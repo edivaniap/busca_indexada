@@ -30,88 +30,107 @@ public class jfBuscaIndexada extends javax.swing.JFrame {
         buttonGroup1 = new javax.swing.ButtonGroup();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jpIndexacao = new javax.swing.JPanel();
-        jTextField1 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        txtArquivo = new javax.swing.JTextField();
+        btnAdicionar = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jList1 = new javax.swing.JList();
-        jLabel1 = new javax.swing.JLabel();
+        listArquivos = new javax.swing.JList();
+        lblArquivos = new javax.swing.JLabel();
+        btnProcurar = new javax.swing.JButton();
         jpBusca = new javax.swing.JPanel();
-        jTextField2 = new javax.swing.JTextField();
-        jButton2 = new javax.swing.JButton();
-        jRadioButton1 = new javax.swing.JRadioButton();
-        jRadioButton2 = new javax.swing.JRadioButton();
+        txtBusca = new javax.swing.JTextField();
+        btnBuscar = new javax.swing.JButton();
+        radioOR = new javax.swing.JRadioButton();
+        radioAND = new javax.swing.JRadioButton();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
-        jLabel2 = new javax.swing.JLabel();
+        txtaResultados = new javax.swing.JTextArea();
+        lblResultados = new javax.swing.JLabel();
+        lblTipo = new javax.swing.JLabel();
+        lblTitulo = new javax.swing.JLabel();
+        lblCredito = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jTextField1.setText("jTextField1");
+        jTabbedPane1.setFont(new java.awt.Font("Ubuntu", 0, 16)); // NOI18N
 
-        jButton1.setText("Adicionar");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        txtArquivo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                txtArquivoActionPerformed(evt);
             }
         });
 
-        jList1.setModel(new javax.swing.AbstractListModel() {
+        btnAdicionar.setText("Adicionar");
+        btnAdicionar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAdicionarActionPerformed(evt);
+            }
+        });
+
+        listArquivos.setModel(new javax.swing.AbstractListModel() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
             public int getSize() { return strings.length; }
             public Object getElementAt(int i) { return strings[i]; }
         });
-        jScrollPane1.setViewportView(jList1);
+        jScrollPane1.setViewportView(listArquivos);
 
-        jLabel1.setText("Arquivos");
+        lblArquivos.setFont(new java.awt.Font("Ubuntu", 1, 15)); // NOI18N
+        lblArquivos.setText("Arquivos");
+
+        btnProcurar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/buscaindexada/imagens/icon_search.png"))); // NOI18N
 
         javax.swing.GroupLayout jpIndexacaoLayout = new javax.swing.GroupLayout(jpIndexacao);
         jpIndexacao.setLayout(jpIndexacaoLayout);
         jpIndexacaoLayout.setHorizontalGroup(
             jpIndexacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jpIndexacaoLayout.createSequentialGroup()
-                .addGap(20, 20, 20)
+                .addGap(38, 38, 38)
                 .addGroup(jpIndexacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblArquivos)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 489, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jpIndexacaoLayout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(jpIndexacaoLayout.createSequentialGroup()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(jpIndexacaoLayout.createSequentialGroup()
-                        .addComponent(jTextField1, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jButton1)
-                        .addGap(54, 54, 54))))
+                        .addComponent(txtArquivo, javax.swing.GroupLayout.PREFERRED_SIZE, 360, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnProcurar, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnAdicionar)))
+                .addContainerGap(28, Short.MAX_VALUE))
         );
         jpIndexacaoLayout.setVerticalGroup(
             jpIndexacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jpIndexacaoLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jpIndexacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton1))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 39, Short.MAX_VALUE)
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addContainerGap(24, Short.MAX_VALUE)
+                .addGroup(jpIndexacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(txtArquivo, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnProcurar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnAdicionar, javax.swing.GroupLayout.Alignment.TRAILING))
+                .addGap(40, 40, 40)
+                .addComponent(lblArquivos)
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(33, 33, 33))
         );
 
         jTabbedPane1.addTab("Indexação", jpIndexacao);
 
-        jTextField2.setText("jTextField2");
+        txtBusca.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtBuscaActionPerformed(evt);
+            }
+        });
 
-        jButton2.setText("Buscar");
+        btnBuscar.setText("Buscar");
 
-        jRadioButton1.setText("OR");
+        radioOR.setText("OR");
 
-        jRadioButton2.setText("AND");
+        radioAND.setText("AND");
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jScrollPane2.setViewportView(jTextArea1);
+        txtaResultados.setColumns(20);
+        txtaResultados.setRows(5);
+        jScrollPane2.setViewportView(txtaResultados);
 
-        jLabel2.setText("Resultados");
+        lblResultados.setFont(new java.awt.Font("Ubuntu", 1, 15)); // NOI18N
+        lblResultados.setText("Resultados");
+
+        lblTipo.setText("Tipo de busca:");
 
         javax.swing.GroupLayout jpBuscaLayout = new javax.swing.GroupLayout(jpBusca);
         jpBusca.setLayout(jpBuscaLayout);
@@ -121,66 +140,93 @@ public class jfBuscaIndexada extends javax.swing.JFrame {
                 .addGap(47, 47, 47)
                 .addGroup(jpBuscaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jpBuscaLayout.createSequentialGroup()
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(jpBuscaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblResultados)
+                            .addGroup(jpBuscaLayout.createSequentialGroup()
+                                .addComponent(lblTipo)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(radioOR)
+                                .addGap(18, 18, 18)
+                                .addComponent(radioAND)))
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(jpBuscaLayout.createSequentialGroup()
-                        .addComponent(jRadioButton1)
-                        .addGap(18, 18, 18)
-                        .addComponent(jRadioButton2)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(jpBuscaLayout.createSequentialGroup()
-                        .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
-                        .addComponent(jButton2)
+                        .addGroup(jpBuscaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jpBuscaLayout.createSequentialGroup()
+                                .addComponent(txtBusca, javax.swing.GroupLayout.PREFERRED_SIZE, 360, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 43, Short.MAX_VALUE)
+                                .addComponent(btnBuscar)))
                         .addGap(45, 45, 45))))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpBuscaLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel2)
-                .addGap(275, 275, 275))
         );
         jpBuscaLayout.setVerticalGroup(
             jpBuscaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jpBuscaLayout.createSequentialGroup()
                 .addGap(28, 28, 28)
                 .addGroup(jpBuscaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton2))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                    .addComponent(txtBusca, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnBuscar))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jpBuscaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jRadioButton1)
-                    .addComponent(jRadioButton2))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel2)
-                .addGap(5, 5, 5)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 144, Short.MAX_VALUE)
-                .addContainerGap())
+                    .addComponent(radioOR)
+                    .addComponent(radioAND)
+                    .addComponent(lblTipo))
+                .addGap(18, 18, 18)
+                .addComponent(lblResultados)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(27, 27, 27))
         );
 
         jTabbedPane1.addTab("Busca", jpBusca);
+
+        lblTitulo.setFont(new java.awt.Font("Ubuntu", 0, 30)); // NOI18N
+        lblTitulo.setText("Sistema de Busca Indexada");
+        lblTitulo.setToolTipText("");
+
+        lblCredito.setFont(new java.awt.Font("Ubuntu", 0, 10)); // NOI18N
+        lblCredito.setText("edivaniap © 2017");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jTabbedPane1)
-                .addContainerGap())
+                .addContainerGap(143, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(lblCredito)
+                    .addComponent(lblTitulo))
+                .addGap(134, 134, 134))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(38, 38, 38)
+                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 563, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(24, 24, 24)
-                .addComponent(jTabbedPane1)
-                .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(22, 22, 22)
+                .addComponent(lblTitulo)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(lblCredito)
+                .addGap(27, 27, 27)
+                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 391, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(33, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void btnAdicionarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdicionarActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_btnAdicionarActionPerformed
+
+    private void txtArquivoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtArquivoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtArquivoActionPerformed
+
+    private void txtBuscaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtBuscaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtBuscaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -218,21 +264,25 @@ public class jfBuscaIndexada extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnAdicionar;
+    private javax.swing.JButton btnBuscar;
+    private javax.swing.JButton btnProcurar;
     private javax.swing.ButtonGroup buttonGroup1;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JList jList1;
-    private javax.swing.JRadioButton jRadioButton1;
-    private javax.swing.JRadioButton jRadioButton2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
     private javax.swing.JPanel jpBusca;
     private javax.swing.JPanel jpIndexacao;
+    private javax.swing.JLabel lblArquivos;
+    private javax.swing.JLabel lblCredito;
+    private javax.swing.JLabel lblResultados;
+    private javax.swing.JLabel lblTipo;
+    private javax.swing.JLabel lblTitulo;
+    private javax.swing.JList listArquivos;
+    private javax.swing.JRadioButton radioAND;
+    private javax.swing.JRadioButton radioOR;
+    private javax.swing.JTextField txtArquivo;
+    private javax.swing.JTextField txtBusca;
+    private javax.swing.JTextArea txtaResultados;
     // End of variables declaration//GEN-END:variables
 }
