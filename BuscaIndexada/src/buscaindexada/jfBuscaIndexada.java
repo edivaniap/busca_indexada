@@ -30,12 +30,11 @@ public class jfBuscaIndexada extends javax.swing.JFrame {
         buttonGroup1 = new javax.swing.ButtonGroup();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jpIndexacao = new javax.swing.JPanel();
-        txtArquivo = new javax.swing.JTextField();
         btnAdicionar = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         listArquivos = new javax.swing.JList();
         lblArquivos = new javax.swing.JLabel();
-        btnProcurar = new javax.swing.JButton();
+        btnRemover = new javax.swing.JButton();
         jpBusca = new javax.swing.JPanel();
         txtBusca = new javax.swing.JTextField();
         btnBuscar = new javax.swing.JButton();
@@ -49,14 +48,9 @@ public class jfBuscaIndexada extends javax.swing.JFrame {
         lblCredito = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Sistema de Busca Indexada");
 
         jTabbedPane1.setFont(new java.awt.Font("Ubuntu", 0, 16)); // NOI18N
-
-        txtArquivo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtArquivoActionPerformed(evt);
-            }
-        });
 
         btnAdicionar.setText("Adicionar");
         btnAdicionar.addActionListener(new java.awt.event.ActionListener() {
@@ -75,38 +69,37 @@ public class jfBuscaIndexada extends javax.swing.JFrame {
         lblArquivos.setFont(new java.awt.Font("Ubuntu", 1, 15)); // NOI18N
         lblArquivos.setText("Arquivos");
 
-        btnProcurar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/buscaindexada/imagens/icon_search.png"))); // NOI18N
+        btnRemover.setText("Remover");
 
         javax.swing.GroupLayout jpIndexacaoLayout = new javax.swing.GroupLayout(jpIndexacao);
         jpIndexacao.setLayout(jpIndexacaoLayout);
         jpIndexacaoLayout.setHorizontalGroup(
             jpIndexacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jpIndexacaoLayout.createSequentialGroup()
-                .addGap(38, 38, 38)
+                .addGap(62, 62, 62)
                 .addGroup(jpIndexacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lblArquivos)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 489, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jpIndexacaoLayout.createSequentialGroup()
-                        .addComponent(txtArquivo, javax.swing.GroupLayout.PREFERRED_SIZE, 360, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnProcurar, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnAdicionar)))
-                .addContainerGap(28, Short.MAX_VALUE))
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 312, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addGroup(jpIndexacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(btnAdicionar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnRemover, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                .addContainerGap(87, Short.MAX_VALUE))
         );
         jpIndexacaoLayout.setVerticalGroup(
             jpIndexacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jpIndexacaoLayout.createSequentialGroup()
-                .addContainerGap(24, Short.MAX_VALUE)
-                .addGroup(jpIndexacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txtArquivo, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnProcurar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnAdicionar, javax.swing.GroupLayout.Alignment.TRAILING))
-                .addGap(40, 40, 40)
+                .addGap(39, 39, 39)
                 .addComponent(lblArquivos)
                 .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(33, 33, 33))
+                .addGroup(jpIndexacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jpIndexacaoLayout.createSequentialGroup()
+                        .addComponent(btnAdicionar)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnRemover)))
+                .addContainerGap(87, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Indexação", jpIndexacao);
@@ -220,10 +213,6 @@ public class jfBuscaIndexada extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btnAdicionarActionPerformed
 
-    private void txtArquivoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtArquivoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtArquivoActionPerformed
-
     private void txtBuscaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtBuscaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtBuscaActionPerformed
@@ -266,7 +255,7 @@ public class jfBuscaIndexada extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAdicionar;
     private javax.swing.JButton btnBuscar;
-    private javax.swing.JButton btnProcurar;
+    private javax.swing.JButton btnRemover;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
@@ -281,7 +270,6 @@ public class jfBuscaIndexada extends javax.swing.JFrame {
     private javax.swing.JList listArquivos;
     private javax.swing.JRadioButton radioAND;
     private javax.swing.JRadioButton radioOR;
-    private javax.swing.JTextField txtArquivo;
     private javax.swing.JTextField txtBusca;
     private javax.swing.JTextArea txtaResultados;
     // End of variables declaration//GEN-END:variables
